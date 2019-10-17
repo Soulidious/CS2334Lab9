@@ -36,10 +36,7 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     public boolean addOrder(Order<T> order)
     {
     	//TODO: implement this
-    	if (orderList.add(order))
-    		return orderList.add(order);
-    	else
-    		return false;
+    	return orderList.add(order);
     }
     /**
      * @return The next order to be removed.
@@ -58,11 +55,7 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     protected int numberRemainingOrder()
     {
     	//TODO: implement this
-    	int result = 0;
-    	//Iterator numRemaining = orderList.iterator();
-    	while (((Iterator) orderList).hasNext())
-    		result++;
-    	return result;
+    	return orderList.size();
     }
     /**
      * Get the next order to be completed.
