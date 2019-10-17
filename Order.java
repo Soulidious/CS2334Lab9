@@ -31,6 +31,8 @@ public class Order<T> implements Comparable<Order<T>>
 	public Order(T description, int timeOrdered)
 	{
 		//TODO: implement this
+		this.description = description;
+		this.timeOrdered = timeOrdered;
 	}
 	/**
 	 * @return description
@@ -38,6 +40,7 @@ public class Order<T> implements Comparable<Order<T>>
 	public T getDescription()
 	{
 		//TODO: implement this
+		return description;
 	}
 	/**
 	 * @return timeOrdered
@@ -45,6 +48,7 @@ public class Order<T> implements Comparable<Order<T>>
 	public int getTimeOrdered()
 	{
 		//TODO: implement this
+		return this.timeOrdered;
 	}
 	/**
 	 * toString override. 
