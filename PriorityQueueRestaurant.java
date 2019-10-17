@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.PriorityQueue;
 
 /**
@@ -22,6 +23,7 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     public PriorityQueueRestaurant()
     {
     	//TODO: implement this
+    	orderList = new PriorityQueue();
     }
     /**
      * Add an order to the restaurant. If there is no more room (number of tickets in the restaurant == maxSize of
@@ -34,6 +36,10 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     public boolean addOrder(Order<T> order)
     {
     	//TODO: implement this
+    	if (orderList.add(order))
+    		return orderList.add(order);
+    	else
+    		return false;
     }
     /**
      * @return The next order to be removed.
@@ -42,6 +48,7 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     protected Order<T> completeOrder()
     {
     	//TODO: implement this
+    	return orderList.poll();
     }
     /**
      * Gets the number of orders stored.
@@ -51,6 +58,11 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     protected int numberRemainingOrder()
     {
     	//TODO: implement this
+    	int result = 0;
+    	//Iterator numRemaining = orderList.iterator();
+    	while (((Iterator) orderList).hasNext())
+    		result++;
+    	return result;
     }
     /**
      * Get the next order to be completed.
@@ -60,5 +72,6 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     public Order<T> checkNextCompletedOrder()
     {
     	//TODO: implement this
+    	return orderList.peek();
     }
 }
