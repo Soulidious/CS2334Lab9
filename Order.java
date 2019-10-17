@@ -69,8 +69,14 @@ public class Order<T> implements Comparable<Order<T>>
      *          1 if this ticket was created after the other ticket
      *          */
 	@Override
-	public int compareTo(Order<T> order)
+	public int compareTo(Order<T> other)
 	{
 		//TODO: implement this
+		if (this.timeOrdered < other.timeOrdered)
+			return -1;
+		else if (this.timeOrdered == other.timeOrdered)
+			return 0;
+		else
+			return 1;
 	}
 }
