@@ -58,6 +58,19 @@ public class PriorityQueueRestaurantTest {
 	{
 		pqueue = new PriorityQueueRestaurant<String>();
 		//TODO: implement this
+		Order<String> order1 = new Order<String>("bacon", 3);
+		Order<String> order2 = new Order<String>("sausage", 1);
+		Order<String> order3 = new Order<String>("eggs", 4);
+		
+		pqueue.addOrder(order1);
+		pqueue.addOrder(order2);
+		pqueue.addOrder(order3);
+		
+		Assert.assertEquals(3, pqueue.numberRemainingOrder());
+		
+		pqueue.completeOrder();
+		
+		Assert.assertEquals(2, pqueue.numberRemainingOrder());
 	}
 	/**
 	 * test both cases of completeOrder
@@ -67,5 +80,18 @@ public class PriorityQueueRestaurantTest {
 	{
 		pqueue = new PriorityQueueRestaurant<String>();
 		//TODO: implement this
+		Order<String> order1 = new Order<String>("bacon", 3);
+		Order<String> order2 = new Order<String>("sausage", 1);
+		Order<String> order3 = new Order<String>("eggs", 4);
+		
+		pqueue.addOrder(order1);
+		pqueue.addOrder(order2);
+		pqueue.addOrder(order3);
+		
+		Assert.assertEquals(order2, pqueue.checkNextCompletedOrder());
+		
+		pqueue.completeOrder();
+		
+		Assert.assertEquals(order1, pqueue.checkNextCompletedOrder());
 	}
 }
