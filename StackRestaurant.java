@@ -31,7 +31,10 @@ public class StackRestaurant<T> extends Restaurant<T> {
 		topOfStack = -1;
 		orderList = new ArrayList<Order<T>>();
 	}
-    /**
+    public ArrayList<Order<T>> getOrderList() {
+		return orderList;
+	}
+	/**
      * Add an order to the restaurant.
      * 
      * @param order The order to be added.
