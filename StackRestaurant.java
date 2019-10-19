@@ -57,6 +57,7 @@ public class StackRestaurant<T> extends Restaurant<T> {
 	{
 		//TODO: implement this
 		Order<T> myOrder = orderList.get(topOfStack--);
+		orderList.remove(topOfStack+1);
 		return myOrder;
 	}
     /**
@@ -75,6 +76,6 @@ public class StackRestaurant<T> extends Restaurant<T> {
 	protected Order<T> checkNextCompletedOrder()
 	{
 		//TODO: implement this
-		return orderList.get(topOfStack+1);
+		return orderList.get(topOfStack);
 	}
 }
