@@ -38,7 +38,10 @@ public class PriorityQueueRestaurant<T> extends Restaurant<T>
     	//TODO: implement this
     	return orderList.add(order);
     }
-    /**
+    public PriorityQueue<Order<T>> getOrderList() {
+		return orderList;
+	}
+	/**
      * @return The next order to be removed.
      */
     @Override
