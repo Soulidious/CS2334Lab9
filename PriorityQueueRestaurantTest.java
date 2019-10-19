@@ -23,6 +23,10 @@ public class PriorityQueueRestaurantTest {
 	{
 		pqueue = new PriorityQueueRestaurant<String>();
 		//TODO: implement this
+		Order<String> order = new Order<String>("bacon", 1);
+		pqueue.addOrder(order);
+		
+		Assert.assertEquals(order, pqueue.getOrderList().peek());
 	}
 	/**
 	 * test completeOrder() using at least three orders
@@ -34,6 +38,16 @@ public class PriorityQueueRestaurantTest {
 	{
 		pqueue = new PriorityQueueRestaurant<String>();
 		//TODO: implement this
+		Order<String> order1 = new Order<String>("bacon", 3);
+		Order<String> order2 = new Order<String>("sausage", 1);
+		Order<String> order3 = new Order<String>("eggs", 4);
+		
+		pqueue.addOrder(order1);
+		pqueue.addOrder(order2);
+		pqueue.addOrder(order3);
+		
+		pqueue.completeOrder();
+		Assert.assertEquals(order1, pqueue.checkNextCompletedOrder());
 	}
 	/**
 	 * test numberRemainingOrder() with at least 2 orders
