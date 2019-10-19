@@ -28,6 +28,9 @@ public class StackRestaurant<T> extends Restaurant<T> {
 	public StackRestaurant()
 	{
 		//TODO: implement this
+		topOfStack = -1;
+		orderList = new ArrayList<Order<T>>();
+		
 	}
     /**
      * Add an order to the restaurant.
@@ -40,6 +43,9 @@ public class StackRestaurant<T> extends Restaurant<T> {
 	public boolean addOrder(Order<T> order)
 	{
 		//TODO: implement this
+		topOfStack++;
+		orderList.add(order);
+		return true;
 	}
     /**
      * [Internal Code - This is not required by the specification but can be a useful construct.]
@@ -48,6 +54,8 @@ public class StackRestaurant<T> extends Restaurant<T> {
 	protected Order<T> completeOrder()
 	{
 		//TODO: implement this
+		Order<T> myOrder = orderList.get(topOfStack--);
+		return myOrder;
 	}
     /**
      * Computes the number of orders in the restaurant that have not been completed.
@@ -58,11 +66,13 @@ public class StackRestaurant<T> extends Restaurant<T> {
 	public int numberRemainingOrder()
 	{
 		//TODO: implement this
+		return orderList.size();
 	}
 	
 	@Override
 	protected Order<T> checkNextCompletedOrder()
 	{
 		//TODO: implement this
+		return orderList.get(topOfStack+1);
 	}
 }
