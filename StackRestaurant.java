@@ -30,7 +30,6 @@ public class StackRestaurant<T> extends Restaurant<T> {
 		//TODO: implement this
 		topOfStack = -1;
 		orderList = new ArrayList<Order<T>>();
-		
 	}
     /**
      * Add an order to the restaurant.
