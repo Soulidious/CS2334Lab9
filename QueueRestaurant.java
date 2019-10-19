@@ -26,6 +26,8 @@ public class QueueRestaurant<T> extends Restaurant<T>{
 	public QueueRestaurant()
 	{
 		//TODO: implement this
+		orderList = new ArrayList<Order<T>>();
+		numOrders = 0;
 	}
     /**
      * Add an order to the restaurant. If there is no more room (number of tickets in the restaurant == maxSize of
@@ -54,6 +56,10 @@ public class QueueRestaurant<T> extends Restaurant<T>{
 	protected Order<T> completeOrder()
 	{
 		//TODO: implement this
+		Order<T> first = orderList.get(0);
+		orderList.remove(0);
+		numOrders--;
+		return first;
 	}
     /**
      * Computes the number of orders in the restaurant that have not been completed.
@@ -64,6 +70,7 @@ public class QueueRestaurant<T> extends Restaurant<T>{
 	protected int numberRemainingOrder()
 	{
 		//TODO: implement this
+		return orderList.size();
 	}
     /**
      * @return the next order to be completed (but do not remove it)
@@ -72,5 +79,6 @@ public class QueueRestaurant<T> extends Restaurant<T>{
 	protected Order<T> checkNextCompletedOrder()
 	{
 		//TODO: implement this;
+		return orderList.get(0);
 	}
 }
